@@ -23,7 +23,7 @@ for TRANSACAO_ID in $TRANSACOES_NO_BLOCO; do
         if [[ ! -z $VERIFICACAO ]]; then
             # Obter o endereço associado à saída da transação
             ENDERECO=$(echo $VERIFICACAO | jq -r '.scriptPubKey.address')
-            echo "Endereço encontrado: $ENDERECO"
+            echo $ENDERECO
             exit 0
         fi
     done
