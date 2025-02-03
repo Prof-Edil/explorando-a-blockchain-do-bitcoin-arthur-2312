@@ -16,9 +16,8 @@ for TRANSACAO_ID in $TRANSACOES_NO_BLOCO; do
     for ENTRADA in $ENTRADAS; do
         ENTRADA_LIMPA=$(echo "$ENTRADA" | tr -d '[:space:]') 
         if [[ "$ENTRADA_LIMPA" == "$TRANSACAO_COINBASE" ]]; then
-            echo "Transação que gasta a coinbase: $TRANSACAO_LIMPA"
+            echo $TRANSACAO_LIMPA
             exit 0
         fi
     done
 done
-
